@@ -1,0 +1,5 @@
+{
+  "name": "AI Dataset Assistant",
+  "description": "An AI assistant that answers questions based on a user-provided dataset (JSONL or text file). The assistant adopts a persona related to the dataset's topic.",
+  "requestFramePermissions": []
+}

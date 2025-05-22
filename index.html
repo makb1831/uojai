@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Dataset Assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif; /* A common Tailwind font */
+    }
+    /* Custom scrollbar for chat */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #e2e8f0; /* Light gray for light theme */
+      border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #94a3b8; /* Medium gray for light theme */
+      border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #64748b; /* Darker gray for light theme */
+    }
+    .ai-assistant-gradient {
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.0.1"
+  }
+}
+</script>
+  <script>
+    // Define this function globally BEFORE the GSI script loads
+    // It will be called by the GSI script's onload attribute.
+    function onGoogleLibraryLoad() {
+      window.gsiScriptLoadedFromHtml = true;
+    }
+  </script>
+  <script src="https://accounts.google.com/gsi/client" onload="onGoogleLibraryLoad()" async></script>
+  <!-- Babel Standalone for in-browser JSX/TSX transpilation -->
+  <script src="https://unpkg.com/@babel/standalone@^7.24.7/babel.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div id="root"></div>
+  <!-- Ensure this path is correct relative to where index.html is served from. -->
+  <!-- If index.html and index.tsx are in the same directory at the root of your publish directory, "./index.tsx" is correct. -->
+  <script type="text/babel" data-type="module" src="./index.tsx"></script>
+</body>
+</html><link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>
